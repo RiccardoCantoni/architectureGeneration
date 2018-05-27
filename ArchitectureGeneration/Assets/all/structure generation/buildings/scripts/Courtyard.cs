@@ -11,7 +11,7 @@ public class Courtyard : Building {
 		data = dataholder.GetComponent<CourtyardData> ().getDataStruct (foundation);
 		placePart (data.floorPart, foundation.center);
 		placePart (data.firstFloorPart, foundation.center);
-		placePart (data.crenellationsPart, foundation.center + Vector3.up * 3);
+		placePart (data.crenellationsPart, foundation.center + Vector3.up * 2.5f);
 	}
 
 }
