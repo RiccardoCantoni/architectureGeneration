@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/PhotoSetScene/columns/columns.unity
+- path: Assets/main/main.unity
   isLoaded: 1
   isActive: 1
