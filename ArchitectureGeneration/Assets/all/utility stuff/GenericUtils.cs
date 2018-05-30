@@ -6,8 +6,6 @@ public class GenericUtils {
 
 	public static List<bool> windowSequence(int seqLength){
 		List<bool> list = new List<bool> ();
-
-
 		if (seqLength % 2 == 0) {
 			if (seqLength == 2) {
 				list.Add (false);

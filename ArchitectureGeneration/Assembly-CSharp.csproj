@@ -118,8 +118,8 @@
     <Compile Include="Assets\all\utility stuff\Randomiser.cs" />
     <Compile Include="Assets\all\utility stuff\Raycaster.cs" />
     <Compile Include="Assets\Controller.cs" />
-    <Compile Include="Assets\PhotoSetScene\arches\ArchBuilder.cs" />
-    <Compile Include="Assets\PhotoSetScene\columns\columnBuilder.cs" />
+    <Compile Include="Assets\scenes\photoSet\arches\ArchBuilder.cs" />
+    <Compile Include="Assets\scenes\photoSet\columns\columnBuilder.cs" />
     <Compile Include="Assets\screenshotClicker.cs" />
     <Compile Include="Assets\uberMain.cs" />
     <Reference Include="UnityEditor.StandardEvents">

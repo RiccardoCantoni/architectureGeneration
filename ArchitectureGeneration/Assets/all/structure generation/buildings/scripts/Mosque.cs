@@ -9,8 +9,7 @@ public class Mosque : Building {
 	protected override void build (){
 		GameObject dataholder = GameObject.Find ("DataHolder");
 		data = dataholder.GetComponent<MosqueData> ().getDataStruct (foundation);
-		placePart (data.mosqueBasePart, foundation.center);
-		placePart (data.mosqueBodyPart, foundation.center);
+        placePart (data.mosqueBodyPart, foundation.center);
 		int cval;
 		for (int i = 0; i < data.collarSequence.Count; i++) {
 			cval = data.collarSequence [i];

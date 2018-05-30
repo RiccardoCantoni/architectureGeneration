@@ -1,16 +1,19 @@
 todo.txt
-*/screenshots/*
+screenshots/
+metadata/
 **.png
 
 
 #VS & Unity3d stuff
 
-**.[Ll]ibrary/
-*.[Tt]emp/
-*.[Oo]bj/
-*.[Bb]uild/
-*.[Bb]uilds/
-*.Assets/AssetStoreTools*
+metadata/
+
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+Assets/AssetStoreTools*
 
 # Visual Studio cache directory
 .vs/
