@@ -5,9 +5,6 @@ using UnityEngine;
 public class PlainBuildingData : MonoBehaviour {
 
 	public List<GameObject> windowPrefabs;
-	public GameObject wallPrefab;
-	public GameObject fullFloorPrefab;
-	public GameObject roofPrefab;
 
 	public PlainBuildingDataStruct getDataStruct(BuildingFoundation foundation){
 		PlainBuildingDataStruct data = new PlainBuildingDataStruct ();
@@ -15,10 +12,10 @@ public class PlainBuildingData : MonoBehaviour {
 		data.sizeZ = foundation.lengthZ;
 		data.floorCount = Randomiser.intBetween (2, 3);
 		data.windowPrefab = windowPrefabs [Random.Range (0, windowPrefabs.Count)];
-		data.wallPrefab = wallPrefab;
-		data.fullFloorPrefab = fullFloorPrefab;
-		data.roofPrefab = roofPrefab;
-		return data;
+        data.wallPrefab = GenericUtils.loadPrefab("plain building", "wallPrefab");
+		data.fullFloorPrefab = GenericUtils.loadPrefab("plain building", "fullFloorPrefab");
+        data.roofPrefab = GenericUtils.loadPrefab("plain building", "roofPrefab");
+        return data;
 	}
 
 }
