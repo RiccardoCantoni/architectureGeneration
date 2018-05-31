@@ -96,7 +96,7 @@
     <Compile Include="Assets\Resources\structure generation\parts\courtyard parts\scripts\FloorPart.cs" />
     <Compile Include="Assets\Resources\structure generation\parts\minaret parts\scripts\BasePartM.cs" />
     <Compile Include="Assets\Resources\structure generation\parts\minaret parts\scripts\ColumnPartM.cs" />
-    <Compile Include="Assets\Resources\structure generation\parts\minaret parts\scripts\DecorationPartM.cs" />
+    <Compile Include="Assets\Resources\structure generation\parts\minaret parts\scripts\DecorationPart.cs" />
     <Compile Include="Assets\Resources\structure generation\parts\minaret parts\scripts\GalleryPart.cs" />
     <Compile Include="Assets\Resources\structure generation\parts\minaret parts\scripts\MinaretPart.cs" />
     <Compile Include="Assets\Resources\structure generation\parts\minaret parts\scripts\RingPartM.cs" />

@@ -26,7 +26,7 @@ public class PlainBuildingCrenellationsPart : PlainBuildingPart {
 	private void instantiateCrenellation(Vector3 startPos, Vector3 stepDir, int stepNumber, Vector3 lookDir){
 		Vector3 curPos = startPos + stepDir * 0.5f;
 		for (int i = 0; i < stepNumber; i++) {
-			GameObject newObj = myInstantiateExtended(crenellationPrefab, curPos, 1 , 0.5f, 0.2f);
+			GameObject newObj = myInstantiate(crenellationPrefab, curPos, 1 , 0.5f, 0.2f);
 			newObj.transform.LookAt (newObj.transform.position + GenericUtils.rotateClockwise (stepDir));
 			curPos += stepDir;
 		}

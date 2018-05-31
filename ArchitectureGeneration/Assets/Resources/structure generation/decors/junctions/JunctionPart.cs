@@ -7,6 +7,6 @@ public class JunctionPart : Part {
 	public GameObject junctionPrefab;
 
 	void Start(){
-		myInstantiateExtended (junctionPrefab, transform.position, 4, 5, 2.5f);
+		myInstantiate (junctionPrefab, transform.position, 4, 5, 2.5f);
 	}
 }

@@ -27,7 +27,7 @@ public class GalleryPart : MinaretPart {
 			}else{
 				p2 = columnPoints[i+1] + Vector3.up*2;
 			}
-			newArch = myInstantiateExtended (data.arch, (p1 + p2) / 2f, Vector3.Distance (p1, p2), 1.5f, 0.3f);
+			newArch = myInstantiate (data.arch, (p1 + p2) / 2f, Vector3.Distance (p1, p2), 1.5f, 0.3f);
 			newArch.transform.LookAt(transform.position + Vector3.up*2f);
 		}
 		myInstantiate (cylinderTop, transform.position + Vector3.up * 3.5f, 4, 0.2f);

@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DecorationPartM : MinaretPart {
+public class DecorationPart: MinaretPart {
 
-	public GameObject decorShaftPrefab;
-	public GameObject decorSpherePrefab;
+	GameObject decorShaftPrefab;
+	GameObject decorSpherePrefab;
 
 	void Start () {
 		initData ();
-		Vector3 basePosition = new Vector3(transform.position.x, 0, transform.position.z);
+        decorShaftPrefab = GenericUtils.loadPrefab("generic", "cylinder12");
+        decorSpherePrefab = GenericUtils.loadPrefab("generic", "icosphere");
+        Vector3 basePosition = new Vector3(transform.position.x, 0, transform.position.z);
 		float baseHeight = transform.position.y;
 		float currentHeight = baseHeight;
 		for (int i = 0; i < data.decorSequence.Count-1; i++) {

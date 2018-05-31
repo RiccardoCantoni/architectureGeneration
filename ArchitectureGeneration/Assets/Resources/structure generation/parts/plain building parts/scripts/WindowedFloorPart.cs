@@ -8,10 +8,10 @@ public class WindowedFloorPart : PlainBuildingPart {
 	void Start () {
 		initData ();
 		if (data.floorCount == 1) {
-			myInstantiateExtended (data.roofPrefab, transform.position, data.sizeX, 1, data.sizeZ);
+			myInstantiate (data.roofPrefab, transform.position, data.sizeX, 1, data.sizeZ);
 		}
 		instantiateWalls ();
-		myInstantiateExtended (data.roofPrefab, transform.position + Vector3.up * 3, data.sizeX, 1, data.sizeZ);
+		myInstantiate (data.roofPrefab, transform.position + Vector3.up * 3, data.sizeX, 1, data.sizeZ);
 	}
 
 	private void instantiateWalls(){
@@ -35,7 +35,7 @@ public class WindowedFloorPart : PlainBuildingPart {
 			} else {
 				obj = data.wallPrefab;
 			}
-			GameObject newObj = myInstantiateExtended(obj, curPos, 1 , 3, 0.2f);
+			GameObject newObj = myInstantiate(obj, curPos, 1 , 3, 0.2f);
 			newObj.transform.LookAt (newObj.transform.position + GenericUtils.rotateClockwise (stepDir));
 			curPos += stepDir;
 		}

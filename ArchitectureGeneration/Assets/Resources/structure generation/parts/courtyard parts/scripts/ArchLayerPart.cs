@@ -40,7 +40,7 @@ public class ArchLayerPart : CourtyardPart {
 		Vector3 pos = startPos+ 0.5f*stepDir;
 		GameObject newPart;
 		for (int i =0; i<maxSteps; i++){
-			newPart = myInstantiateExtended (data.archPrefab, pos -0.5f*lookdir, 1, 1, 1);
+			newPart = myInstantiate (data.archPrefab, pos -0.5f*lookdir, 1, 1, 1);
 			newPart.transform.LookAt(newPart.transform.position + lookdir);
 			if (!Raycaster.stepClear(pos, stepDir)) {
 				return false;

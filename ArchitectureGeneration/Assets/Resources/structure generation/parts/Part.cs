@@ -11,7 +11,7 @@ public class Part : MonoBehaviour {
 		return newObj;
 	}
 
-	protected GameObject myInstantiateExtended(GameObject o, Vector3 pos, float dimX, float dimY, float dimZ){
+	protected GameObject myInstantiate(GameObject o, Vector3 pos, float dimX, float dimY, float dimZ){
 		GameObject newObj = Instantiate (o, pos, transform.rotation);
 		newObj.transform.parent = transform;
 		newObj.transform.localScale = new Vector3 (dimX, dimY, dimZ);

@@ -7,7 +7,7 @@ public class FloorPart : CourtyardPart {
 	void Start () {
 		initData ();
         GameObject p = GenericUtils.loadPrefab("generic","floorPrefab");
-		myInstantiateExtended (p, transform.position, data.sizeX, 1, data.sizeZ);
+		myInstantiate (p, transform.position, data.sizeX, 1, data.sizeZ);
 	}
 
 }

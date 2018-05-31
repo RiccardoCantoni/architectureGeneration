@@ -35,7 +35,7 @@ public class CourtyardCrenellationsPart : CourtyardPart {
 		Vector3 pos = startPos+ 0.5f*stepDir;
 		GameObject newPart;
 		for (int i =0; i<maxSteps; i++){
-			newPart = myInstantiateExtended (crenellationPrefab, pos + 0.1f*lookdir, 1, 1, 0.2f);
+			newPart = myInstantiate (crenellationPrefab, pos + 0.1f*lookdir, 1, 1, 0.2f);
 			newPart.transform.LookAt(newPart.transform.position + lookdir);
 			if (!Raycaster.stepClear(pos, stepDir)) {
 				return false;

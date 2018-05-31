@@ -21,7 +21,7 @@ public class ArchCollarPart : MosquePart {
 			}else{
 				p2 = mountPoints[i+1];
 			}
-			newArch = myInstantiateExtended (data.archPrefab, (p1 + p2) / 2f, Vector3.Distance (p1, p2), data.collarHeight, 0.3f);
+			newArch = myInstantiate (data.archPrefab, (p1 + p2) / 2f, Vector3.Distance (p1, p2), data.collarHeight, 0.3f);
 			newArch.transform.LookAt(transform.position);
 		}
 		myInstantiate (cylinderBlack, transform.position, data.collarDiameter - 0.4f, data.collarHeight);
