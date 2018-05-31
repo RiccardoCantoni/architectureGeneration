@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class MinaretData : MonoBehaviour{
 
-	public List<GameObject> basePrefabs;
-	public List<GameObject> shaftPrefabs;
-	public List<GameObject> ringPrefabs;
-	public List<GameObject> galleryPrefabs;
-	public List<GameObject> topPrefabs;
-	public List<GameObject> decorPrefabs;
-
 	private MinaretDataStruct dataStruct;
 
     void Start(){
@@ -37,12 +30,18 @@ public class MinaretData : MonoBehaviour{
 		dataStruct.decorHeight = 1;
 		dataStruct.decorWidth = 1;
 
-		dataStruct.basePrefab = basePrefabs [Random.Range (0, basePrefabs.Count)];
-		dataStruct.shaftPrefab = shaftPrefabs [Random.Range (0, shaftPrefabs.Count)];
-		dataStruct.ringPrefab = ringPrefabs [Random.Range(0,ringPrefabs.Count)];
-		dataStruct.galleryPrefab = galleryPrefabs [Random.Range (0, galleryPrefabs.Count)];
-		dataStruct.topPrefab = topPrefabs [Random.Range (0, topPrefabs.Count)];
-		dataStruct.decorPrefab = decorPrefabs [Random.Range (0, decorPrefabs.Count)];
+        GameObject[] basePrefabs = GenericUtils.loadAllPrefabs("prefabs/minaret/base_M");
+        dataStruct.basePrefab = basePrefabs [Random.Range (0, basePrefabs.Length)];
+        GameObject[] shaftPrefabs = GenericUtils.loadAllPrefabs("prefabs/minaret/shaft_M");
+        dataStruct.shaftPrefab = shaftPrefabs [Random.Range (0, shaftPrefabs.Length)];
+        GameObject[] ringPrefabs = GenericUtils.loadAllPrefabs("prefabs/minaret/ring_M");
+        dataStruct.ringPrefab = ringPrefabs [Random.Range(0,ringPrefabs.Length)];
+        GameObject[] galleryPrefabs = GenericUtils.loadAllPrefabs("prefabs/minaret/gallery_M");
+        dataStruct.galleryPrefab = galleryPrefabs [Random.Range (0, galleryPrefabs.Length)];
+        GameObject[] topPrefabs = GenericUtils.loadAllPrefabs("prefabs/minaret/top_M");
+        dataStruct.topPrefab = topPrefabs [Random.Range (0, topPrefabs.Length)];
+        GameObject[] decorPrefabs = GenericUtils.loadAllPrefabs("prefabs/minaret/decoration_M");
+        dataStruct.decorPrefab = decorPrefabs [Random.Range (0, decorPrefabs.Length)];
 		dataStruct.decorSequence = generateDecorSequence ();
 
 		ArchData ad = gameObject.GetComponent<ArchData> ();
