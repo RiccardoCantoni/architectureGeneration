@@ -19,13 +19,6 @@ public struct MinaretDataStruct {
 	public float decorWidth;
 	public List<int> decorSequence;
 
-	public GameObject basePart;
-	public GameObject shaftPart;
-	public GameObject ringPart;
-	public GameObject galleryPart;
-	public GameObject topPart;
-	public GameObject decorPart;
-
 	public GameObject basePrefab;
 	public GameObject shaftPrefab;
 	public GameObject ringPrefab;

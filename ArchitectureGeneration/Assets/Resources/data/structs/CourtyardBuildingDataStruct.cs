@@ -7,10 +7,6 @@ public struct CourtyardBuildingDataStruct {
 	public int sizeX;
 	public int sizeZ;
 
-	public GameObject firstFloorPart;
-	public GameObject crenellationsPart;
-	public GameObject floorPart;
-
 	public GameObject windowPrefab;
 	public GameObject columnBasePrefab;
 	public GameObject columnShaftPrefab;

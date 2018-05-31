@@ -42,4 +42,15 @@ public class GenericUtils {
         }
         return o;
     }
+
+    public static GameObject[] loadAllPrefabs(string path)
+    {
+        Object[] os = Resources.LoadAll(path, typeof(GameObject));
+        GameObject[] res = new GameObject[os.Length];
+        for (int i=0; i<os.Length; i++)
+        {
+            res[i] = (GameObject)os[i];
+        }
+        return res;
+    }
 }

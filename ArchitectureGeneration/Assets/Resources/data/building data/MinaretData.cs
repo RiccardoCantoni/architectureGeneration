@@ -11,16 +11,9 @@ public class MinaretData : MonoBehaviour{
 	public List<GameObject> topPrefabs;
 	public List<GameObject> decorPrefabs;
 
-	public GameObject basePart;
-	public GameObject shaftPart;
-	public GameObject ringPart;
-	public GameObject galleryPart;
-	public GameObject topPart;
-	public GameObject decorPart;
-
 	private MinaretDataStruct dataStruct;
 
-	void Start(){
+    void Start(){
 		generateDataStruct ();
 	}
 
@@ -43,12 +36,6 @@ public class MinaretData : MonoBehaviour{
 		dataStruct.topHeight = dataStruct.galleryWidth;
 		dataStruct.decorHeight = 1;
 		dataStruct.decorWidth = 1;
-		dataStruct.basePart = basePart;
-		dataStruct.shaftPart = shaftPart;
-		dataStruct.ringPart = ringPart;
-		dataStruct.galleryPart = galleryPart;
-		dataStruct.topPart = topPart;
-		dataStruct.decorPart = decorPart;
 
 		dataStruct.basePrefab = basePrefabs [Random.Range (0, basePrefabs.Count)];
 		dataStruct.shaftPrefab = shaftPrefabs [Random.Range (0, shaftPrefabs.Count)];

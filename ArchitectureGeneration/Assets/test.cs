@@ -5,8 +5,11 @@ using UnityEngine;
 public class test : MonoBehaviour {
 
 	void Start () {
-        GameObject o = GenericUtils.loadPrefab("generic","floorPrefab");
-        Instantiate(o);
+        GameObject[] objects = GenericUtils.loadAllPrefabs("generic");
+        foreach (GameObject go in objects)
+        {
+            Debug.Log(go.name);
+        }
 	}
 	
 	// Update is called once per frame

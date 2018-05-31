@@ -8,10 +8,6 @@ public struct PlainBuildingDataStruct{
 	public int sizeZ;
 	public int floorCount;
 
-	public GameObject fullFloorPart;
-	public GameObject windowedFloorPart;
-	public GameObject crenellationsPart;
-
 	public GameObject windowPrefab;
 	public GameObject wallPrefab;
 	public GameObject fullFloorPrefab;

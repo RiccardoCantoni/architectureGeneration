@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class MosqueData : MonoBehaviour {
 
-	public GameObject mosqueBasePart;
-	public GameObject mosqueBodyPart;
-	public GameObject fullCollarPart;
-	public GameObject archCollarPart;
-	public GameObject topPart;
-	public GameObject decorPart;
-
 	public List<GameObject> mosqueBodyPrefabs;
 	public GameObject fullCollarPrefab;
 	public List<GameObject> topPrefabs;
@@ -28,12 +21,6 @@ public class MosqueData : MonoBehaviour {
 		}
 		dataStruct.baseHeight = 5;
 		dataStruct.decorSequence = generateDecorSequence ();
-		dataStruct.mosqueBasePart = mosqueBasePart;
-		dataStruct.mosqueBodyPart = mosqueBodyPart;
-		dataStruct.fullCollarPart = fullCollarPart;
-		dataStruct.archCollarPart = archCollarPart;
-		dataStruct.topPart = topPart;
-		dataStruct.decorPart = decorPart;
 		dataStruct.mosqueBodyPrefab = mosqueBodyPrefabs[Random.Range (0,mosqueBodyPrefabs.Count)];
 		dataStruct.fullCollarPrefab = fullCollarPrefab;
 		List<GameObject> arches = GameObject.Find ("DataHolder").GetComponent<ArchData> ().simpleArches;
