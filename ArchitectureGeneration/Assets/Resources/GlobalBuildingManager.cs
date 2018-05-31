@@ -7,11 +7,6 @@ public class GlobalBuildingManager : MonoBehaviour {
 	FoundationGenerator foundGen;
 	FoundationData foundData;
 
-	public GameObject minaretBuilding;
-	public GameObject plainBuildingBuilding;
-	public GameObject courtyardBuilding;
-	public GameObject mosqueBuilding;
-	public GameObject junctionPart;
 
 	void Start () {
 		foundData = GameObject.Find ("DataHolder").GetComponent<FoundationData> ();
@@ -19,42 +14,42 @@ public class GlobalBuildingManager : MonoBehaviour {
 	}
 
 	IEnumerator mainCoroutine(){
+        Building building;
+        GameObject newBuilding;
 		foundGen= gameObject.GetComponent<FoundationGenerator>();
 		yield return StartCoroutine (foundGen.generateImmediate ());
 		foundData.receiveData (foundGen);
 
 		foreach (BuildingFoundation b in foundData.rectangles) {
-			GameObject newBuilding;
 			if (Randomiser.rollUnder (50)) {
-				newBuilding = Instantiate (plainBuildingBuilding, b.center, Quaternion.identity);
+                newBuilding = Part.placeRootPart<PlainBuilding>("plain building", b.center);
 
 			} else {
-				newBuilding = Instantiate (courtyardBuilding, b.center, Quaternion.identity);
-			}
-			Building script = newBuilding.GetComponent<Building> ();
-			script.foundation = b;
-			script.go ();
+				newBuilding = Part.placeRootPart<Courtyard>("plain building", b.center);
+            }
+			building = newBuilding.GetComponent<Building> ();
+			building.foundation = b;
+			building.go ();
 		}
 			
 		foreach (BuildingFoundation b in foundData.minarets) {
-			GameObject newMinaret = Instantiate (minaretBuilding, b.center, Quaternion.identity);
-			Building building = newMinaret.GetComponent<Building>();
+            newBuilding = Part.placeRootPart<Minaret>("minaret", b.center);
+			building = newBuilding.GetComponent<Building>();
 			building.foundation = b;
 			building.go ();
 		}
 
 		foreach (Junction j in foundData.junctions) {
-			GameObject newJunction = Instantiate (junctionPart, j.position, Quaternion.identity);
-			newJunction.transform.LookAt (newJunction.transform.position+j.axis);
+            newBuilding = Part.placeRootPart<JunctionPart>("junction", j.position);
+			newBuilding.transform.LookAt (newBuilding.transform.position+j.axis);
 		}
 
 		foreach (BuildingFoundation m in foundData.squares) {
-			GameObject newMosque = Instantiate (mosqueBuilding, m.center, Quaternion.identity);
-			Building building = newMosque.GetComponent<Building> ();
+            newBuilding = Part.placeRootPart<Mosque>("mosque", m.center);
+			building = newBuilding.GetComponent<Building> ();
 			building.foundation = m;
 			building.go ();
 		}
-	}
-	
+	}	
 
 }
