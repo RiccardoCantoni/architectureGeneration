@@ -4,30 +4,48 @@ using UnityEngine;
 
 public class ArchData : MonoBehaviour{
 
-	public List<GameObject> columnBases;
-	public List<GameObject> columnShafts;
-	public List<GameObject> columnCapitals;
-	public List<GameObject> arches;
-	public List<GameObject> simpleArches;
+	GameObject[] columnBases;
+    GameObject[] columnShafts;
+    GameObject[] columnCapitals;
+    GameObject[] arches;
+    GameObject[] simpleArches;
 
-	public GameObject getColumnBase(){
-		return columnBases[Random.Range(0,columnBases.Count)];
+    bool data = false;
+
+    void getData()
+    {
+        if (data) return;
+        columnBases = GenericUtils.loadAllPrefabs("prefabs/columns/base");
+        columnShafts = GenericUtils.loadAllPrefabs("prefabs/columns/shaft");
+        columnCapitals = GenericUtils.loadAllPrefabs("prefabs/columns/capital");
+        arches = GenericUtils.loadAllPrefabs("prefabs/arches/composite");
+        simpleArches = GenericUtils.loadAllPrefabs("prefabs/arches/simple");
+        data = true;
+    }
+
+    public GameObject getColumnBase(){
+        getData();
+		return columnBases[Random.Range(0,columnBases.Length)];
 	}
 
 	public GameObject getColumnShaft(){
-		return columnShafts[Random.Range(0,columnShafts.Count)];
+        getData();
+        return columnShafts[Random.Range(0,columnShafts.Length)];
 	}
 
 	public GameObject getColumnCapital(){
-		return columnCapitals [Random.Range (0, columnCapitals.Count)];
+        getData();
+        return columnCapitals [Random.Range (0, columnCapitals.Length)];
 	}
 
 	public GameObject getArch(){
-		return arches[Random.Range(0,arches.Count)];
+        getData();
+        return arches[Random.Range(0,arches.Length)];
 	}
 
 	public GameObject getSimpleArch(){
-		return simpleArches[Random.Range(0,simpleArches.Count)];
+        getData();
+        return simpleArches[Random.Range(0,simpleArches.Length)];
 	}
 }
 

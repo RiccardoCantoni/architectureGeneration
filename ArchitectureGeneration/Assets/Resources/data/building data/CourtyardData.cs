@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class CourtyardData : MonoBehaviour {
 
-	public List<GameObject> windowPrefabs;
+	GameObject[] windowPrefabs;
 
 	public CourtyardBuildingDataStruct getDataStruct(BuildingFoundation foundation){
 		CourtyardBuildingDataStruct data = new CourtyardBuildingDataStruct();
 		ArchData ad = gameObject.GetComponent<ArchData> ();
+        windowPrefabs = GenericUtils.loadAllPrefabs("prefabs/windows");
 		data.sizeX = foundation.lengthX;
 		data.sizeZ = foundation.lengthZ;
-		data.windowPrefab = windowPrefabs[Random.Range(0,windowPrefabs.Count)];
+		data.windowPrefab = windowPrefabs[Random.Range(0,windowPrefabs.Length)];
 		data.columnBasePrefab = ad.getColumnBase ();
 		data.columnShaftPrefab = ad.getColumnShaft ();
 		data.columnCapitalPrefab = ad.getColumnCapital ();

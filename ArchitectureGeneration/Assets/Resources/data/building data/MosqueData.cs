@@ -23,8 +23,8 @@ public class MosqueData : MonoBehaviour {
 		dataStruct.decorSequence = generateDecorSequence ();
 		dataStruct.mosqueBodyPrefab = mosqueBodyPrefabs[Random.Range (0,mosqueBodyPrefabs.Count)];
 		dataStruct.fullCollarPrefab = fullCollarPrefab;
-		List<GameObject> arches = GameObject.Find ("DataHolder").GetComponent<ArchData> ().simpleArches;
-		dataStruct.archPrefab = arches [Random.Range (0, arches.Count)];
+        GameObject[] arches = GenericUtils.loadAllPrefabs("prefabs/arches/simple");
+		dataStruct.archPrefab = arches [Random.Range (0, arches.Length)];
 		dataStruct.topPrefab = topPrefabs [Random.Range (0, topPrefabs.Count)];
 		dataStruct.decorPrefab = decorPrefab;
 		return dataStruct;

@@ -9,7 +9,7 @@ public class PlainBuildingData : MonoBehaviour {
 		data.sizeX = foundation.lengthX;
 		data.sizeZ = foundation.lengthZ;
 		data.floorCount = Randomiser.intBetween (2, 3);
-        GameObject[] windowPrefabs = GenericUtils.loadAllPrefabs("prefabs/generic/windows");
+        GameObject[] windowPrefabs = GenericUtils.loadAllPrefabs("prefabs/windows");
         data.windowPrefab = windowPrefabs [Random.Range (0, windowPrefabs.Length)];
         data.wallPrefab = GenericUtils.loadPrefab("plain building", "wallPrefab");
 		data.fullFloorPrefab = GenericUtils.loadPrefab("plain building", "fullFloorPrefab");

@@ -5,14 +5,15 @@ using UnityEngine;
 public class MinaretData : MonoBehaviour{
 
 	private MinaretDataStruct dataStruct;
-
-    void Start(){
-		generateDataStruct ();
-	}
+    bool generated = false;
 
 	public MinaretDataStruct getDataStruct(){
-		return dataStruct;
-	}
+        if (generated)
+		    return dataStruct;
+        generateDataStruct();
+        generated = true;
+        return dataStruct;
+    }
 
 	private void generateDataStruct(){
 		dataStruct = new MinaretDataStruct ();
