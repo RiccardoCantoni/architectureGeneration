@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Controller.cs" />
+    <Compile Include="Assets\Resources\BuildAnimator.cs" />
     <Compile Include="Assets\Resources\CameraMover.cs" />
     <Compile Include="Assets\Resources\data\arches\ArchData.cs" />
     <Compile Include="Assets\Resources\data\building data\CourtyardData.cs" />
